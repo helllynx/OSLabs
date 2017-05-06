@@ -42,7 +42,7 @@ ps -e -o pid,ppid,start_time,command
  2073  1916 15:36 ps -e -o pid,ppid,start_time,command
 ```
 
- ```
+```
 ps -f -a
  UID        PID  PPID  C STIME TTY          TIME CMD
 zybc      1758  1632  0 19:19 pts/0    00:00:00 ./a.out
@@ -55,6 +55,7 @@ zybc      1765  1735  0 19:19 pts/1    00:00:00 ps -f -a
 ps -la              
 PPID – PID родительского процесса
 F – является ли процесс форком от другого
+
 ```
 F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
 0 S  1000  1758  1632  0  80   0 -  1046 hrtime pts/0    00:00:00 a.out
@@ -62,6 +63,8 @@ F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
 1 S  1000  1760  1758  0  80   0 -  1046 hrtime pts/0    00:00:00 a.out
 1 S  1000  1761  1759  0  80   0 -  1046 hrtime pts/0    00:00:00 a.out
 0 R  1000  1791  1735  0  80   0 -  8453 -      pts/1    00:00:00 ps
+```
+
 ```
  a.out─┬─a.out───a.out
          └─a.out
