@@ -5,6 +5,10 @@
 
 **1.1**
 
+![alt text](http://url/to/img.png)
+
+**1.2**
+
 ```
 #include <sys/wait.h>
 #include <iostream>
@@ -40,7 +44,7 @@ Child 5715 status 21248
 Child 5716 status 21504
 ```
 
-**1.2**
+**1.3**
 
 ```
 // kill(getpid(), SIGKILL);
