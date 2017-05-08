@@ -106,7 +106,7 @@ F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
 
 using namespace std;
 
-int main(){
+int main() {
 	kill(getppid(), SIGKILL);
 	return 0;
 }
