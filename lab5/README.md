@@ -350,6 +350,7 @@ All done, counter = 100
 без
 
 pthread_mutex_lock(&mut);
+
 pthread_mutex_unlock(&mut); 
 
 ```
