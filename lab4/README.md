@@ -5,7 +5,7 @@
 
 **1.1**
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/yenqwerty/OSLabs/blob/master/extern_files/diagram.jpg)
 
 **1.2**
 
