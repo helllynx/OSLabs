@@ -28,8 +28,8 @@ int main() {
 	while(true) {
 		counter++;
 		if (exstatus) {
-			cout << "Операций пыполнено: " << counter 
-			     << "\nКод завершения: " << exstatus << "\n";
+			cout << "Operations done: " << counter 
+			     << "\nExit code: " << exstatus << "\n";
 			break;		
 		}	
 	}

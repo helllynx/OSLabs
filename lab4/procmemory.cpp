@@ -18,7 +18,7 @@ int showit(const char* p); /* Function prototype */
 
 int main() {  
 	int i = 0; /* Automatic variable */
-	fork();
+	// fork();
 
 	/* Printing addressing information */
 	printf("\nAddress etext: %8p\n", &etext);

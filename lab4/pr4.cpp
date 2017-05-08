@@ -25,10 +25,10 @@ int main() {
 	char buffer[BUF_SIZE];
 	if (read(0, buffer, BUF_SIZE) == -1) {
 		if (errno == EINTR) {
-			cout << "Время истекло\n";		
+			cout << "Time ended!\n";		
 		}
 	} else {
-		cout << "Привет, " << buffer;
+		cout << "Hi, " << buffer;
 	}
 
 	return 0;
