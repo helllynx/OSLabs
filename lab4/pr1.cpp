@@ -12,7 +12,7 @@ int main() {
 		pid = fork();
 
 		if (pid == 0) {
-			//exit(getpid() % 256);
+			// exit(getpid() % 256);
 			kill(getpid(), SIGKILL);
 		}
 	}
