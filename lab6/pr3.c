@@ -9,10 +9,23 @@
 
 const int BUF_SIZE = 1024;
 
-int sendMessage(char* message);
-int getTimeMills();
-
 int fd;
+
+int sendMSG(char* message) {
+	char output[BUF_SIZE];
+	sprintf(output, "%d %d %s", (int) strlen(message) + 1, getTime(), message);
+	write(fd, output, BUF_SIZE);
+
+	return 0;
+}
+
+int getTime() {
+	struct timeval currentTime;
+	gettimeofday(&currentTime, NULL);
+
+	return (int) currentTime.tv_usec;
+}
+
 
 int main(int argc, char* argv[]) {
 	int i, n, pid;
@@ -37,12 +50,12 @@ int main(int argc, char* argv[]) {
 
 	pid = fork();
 	if (pid == 0) {
-		return 	sendMessage("Message from first process");
+		return 	sendMSG("MSG from 1-st PROCESS!");
 	}
 
 	pid = fork();
 	if (pid == 0) {
-		return 	sendMessage("Message from second process");
+		return 	sendMSG("MSG from 2-d PROCESS!");
 	}	
 
 	
@@ -53,30 +66,15 @@ int main(int argc, char* argv[]) {
 		char* firstSpace = strchr(buf, ' ') + 1;
 		char subString[6]; 
 		strncpy(subString, firstSpace, 6);
-		int spendedTime = getTimeMicroseconds() - atoi(subString);
+		int spendedTime = getTime() - atoi(subString);
 		
-		puts("========================");
-		printf("Message: %s\n", buf);	
-		printf("Time: %d usec\n", spendedTime);	
+		puts("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+		printf("MSG Text: %s\n", buf);	
+		printf("Time: %d us\n", spendedTime);	
 	}
 
 	unlink(FIFONAME);
 	close(fd);
 	return 0;
-}
-
-int sendMessage(char* message) {
-	char output[BUF_SIZE];
-	sprintf(output, "%d %d %s", (int) strlen(message) + 1, getTimeMicroseconds(), message);
-	write(fd, output, BUF_SIZE);
-
-	return 0;
-}
-
-int getTimeMicroseconds() {
-	struct timeval currentTime;
-	gettimeofday(&currentTime, NULL);
-
-	return (int) currentTime.tv_usec;
 }
 
