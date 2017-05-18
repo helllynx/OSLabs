@@ -16,7 +16,7 @@ char  buffer1[25];
 
 int showit(const char* p); /* Function prototype */
 
-int main() {  
+int main() {
 	int i = 0; /* Automatic variable */
 	// fork();
 
